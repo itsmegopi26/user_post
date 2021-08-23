@@ -39,6 +39,17 @@ class postservices {
         callback (err, null);
       });
   }
+
+  async getpost (callback) {
+    await postModel
+      .find ()
+      .then (res => {
+        callback (null, res);
+      })
+      .catch (err => {
+        callback (null, err);
+      });
+  }
 }
 module.exports = postservices;
 
